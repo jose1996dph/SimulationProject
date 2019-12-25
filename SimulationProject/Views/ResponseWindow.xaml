@@ -1,0 +1,114 @@
+﻿<Window x:Class="SimulationProject.Views.ResponseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimulationProject.Views"
+        mc:Ignorable="d"
+        Title="Resultado" Height="450" Width="800">
+    <ScrollViewer Margin="10">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Margin="0,10"
+                           Grid.Column="0"
+                           Text="{Binding Total, Mode=TwoWay, StringFormat='Total: {0:N2} Bs'}"/>
+                <TextBlock Margin="0,10"
+                           Grid.Column="1"
+                           Text="{Binding TotalCar, Mode=TwoWay, StringFormat='Total de carrros: {0} Bs'}"/>
+                <TextBlock Margin="0,10"
+                           Grid.Column="2"
+                           Text="{Binding TotalTruck, Mode=TwoWay, StringFormat='Total de camionetas: {0} Bs'}"/>
+
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  Margin="0,10">
+                <ListView ItemsSource="{Binding TableResponse1}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="n"
+                                            Width="245"
+                                            DisplayMemberBinding="{Binding n}"/>
+                            <GridViewColumn Header="Rn+1"
+                                            Width="245"
+                                            DisplayMemberBinding="{Binding Rn1, StringFormat={}{0:N3}}"/>
+                            <GridViewColumn Header="Nº vehiculos"
+                                            Width="245"
+                                            DisplayMemberBinding="{Binding Description}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="2"
+                  Margin="0,10">
+                <ListView ItemsSource="{Binding TableResponse2}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="n"
+                                            Width="245"
+                                            DisplayMemberBinding="{Binding n}"/>
+                            <GridViewColumn Header="Rn+1"
+                                            Width="245"
+                                            DisplayMemberBinding="{Binding Rn1, StringFormat={}{0:N3}}"/>
+                            <GridViewColumn Header="Tipo vehiculos"
+                                            Width="245"
+                                            DisplayMemberBinding="{Binding Description}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="3"
+                  Margin="0,10">
+                <ListView ItemsSource="{Binding TableResponse3}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="n"
+                                            Width="183"
+                                            DisplayMemberBinding="{Binding n}"/>
+                            <GridViewColumn Header="Rn+1"
+                                            Width="183"
+                                            DisplayMemberBinding="{Binding Rn1, StringFormat={}{0:N3}}"/>
+                            <GridViewColumn Header="Ofertas"
+                                            Width="183"
+                                            DisplayMemberBinding="{Binding Description}"/>
+                            <GridViewColumn Header="Pricio"
+                                            Width="183"
+                                            DisplayMemberBinding="{Binding Value, StringFormat='{}{0:N2} Bs'}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Window>
