@@ -28,10 +28,10 @@
                            Text="{Binding Total, Mode=TwoWay, StringFormat='Total: {0:N2} Bs'}"/>
                 <TextBlock Margin="0,10"
                            Grid.Column="1"
-                           Text="{Binding TotalCar, Mode=TwoWay, StringFormat='Total de carrros: {0} Bs'}"/>
+                           Text="{Binding TotalCar, Mode=TwoWay, StringFormat='Total de carrros: {0}'}"/>
                 <TextBlock Margin="0,10"
                            Grid.Column="2"
-                           Text="{Binding TotalTruck, Mode=TwoWay, StringFormat='Total de camionetas: {0} Bs'}"/>
+                           Text="{Binding TotalTruck, Mode=TwoWay, StringFormat='Total de camionetas: {0}'}"/>
 
             </Grid>
 

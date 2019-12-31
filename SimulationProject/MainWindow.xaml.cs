@@ -30,6 +30,8 @@ namespace SimulationProject
             InitializeComponent();
 
             DataContext = viewModel = new MainViewModels();
+
+            viewModel.ChangeValuesCommand.Execute(null);
         }
 
 
